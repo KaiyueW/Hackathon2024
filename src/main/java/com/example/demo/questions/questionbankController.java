@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/questionbank")
+@CrossOrigin(origins = "http://localhost:63342")
 public class questionbankController {
 
     @Autowired

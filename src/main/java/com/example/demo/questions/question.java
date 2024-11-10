@@ -11,13 +11,16 @@ public class question {
 
     private String explain;
 
+    private String imagePath;
+
     // Constructor
-    public question(int id, String questionText, String[] options, int correctOptionIndex, String explain) {
+    public question(int id, String questionText, String[] options, int correctOptionIndex, String explain, String imagePath) {
         this.questionText = questionText;
         this.id = id;
         this.options = options;
         this.correctOptionIndex = correctOptionIndex;
         this.explain = explain;
+        this.imagePath = imagePath;
     }
 
     // Getter and Setter methods
@@ -65,6 +68,14 @@ public class question {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }
 

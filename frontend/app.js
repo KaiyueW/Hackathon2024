@@ -1,5 +1,3 @@
-// app.js
-
 document.getElementById("fetchQuestionsBtn").addEventListener("click", fetchQuestions);
 
 async function fetchQuestions() {
@@ -16,7 +14,7 @@ async function fetchQuestions() {
 }
 
 function displayQuestions(questions) {
-    console.log("displayQuestions function started");
+    console.log("displayQuestions function started"); // Log to indicate function is running
     const container = document.getElementById("questionsContainer");
     container.innerHTML = ""; // Clear previous content
 
@@ -27,6 +25,14 @@ function displayQuestions(questions) {
         const questionText = document.createElement("h3");
         questionText.innerText = `Q${index + 1}: ${question.questionText}`;
         questionDiv.appendChild(questionText);
+
+        if (question.imagePath) {
+            const questionImage = document.createElement("img");
+            questionImage.src = question.imagePath; // Assuming the image path is relative to the server
+            questionImage.alt = "Question Image";
+            questionImage.classList.add("question-image");
+            questionDiv.appendChild(questionImage);
+        }
 
         const optionsList = document.createElement("ul");
         optionsList.classList.add("options");
